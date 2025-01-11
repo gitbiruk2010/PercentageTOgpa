@@ -42,73 +42,8 @@ public class Main {
                     }
                 } while (!validInput);
 
-                // Use if-else statements to determine the corresponding GPA.
-                double gpa;
-                if (percentage >= 95.0) {
-                    gpa = 4.0;
-                } else if (percentage >= 94.0) {
-                    gpa = 3.9;
-                } else if (percentage >= 93.0) {
-                    gpa = 3.8;
-                } else if (percentage >= 92.0) {
-                    gpa = 3.7;
-                } else if (percentage >= 91.0) {
-                    gpa = 3.6;
-                } else if (percentage >= 90.0) {
-                    gpa = 3.5;
-                } else if (percentage >= 89.0) {
-                    gpa = 3.4;
-                } else if (percentage >= 88.0) {
-                    gpa = 3.3;
-                } else if (percentage >= 87.0) {
-                    gpa = 3.2;
-                } else if (percentage >= 86.0) {
-                    gpa = 3.1;
-                } else if (percentage >= 85.0) {
-                    gpa = 3.0;
-                } else if (percentage >= 84.0) {
-                    gpa = 2.9;
-                } else if (percentage >= 83.0) {
-                    gpa = 2.8;
-                } else if (percentage >= 82.0) {
-                    gpa = 2.7;
-                } else if (percentage >= 81.0) {
-                    gpa = 2.6;
-                } else if (percentage >= 80.0) {
-                    gpa = 2.5;
-                } else if (percentage >= 79.0) {
-                    gpa = 2.4;
-                } else if (percentage >= 78.0) {
-                    gpa = 2.3;
-                } else if (percentage >= 77.0) {
-                    gpa = 2.2;
-                } else if (percentage >= 76.0) {
-                    gpa = 2.1;
-                } else if (percentage >= 75.0) {
-                    gpa = 2.0;
-                } else if (percentage >= 74.0) {
-                    gpa = 1.9;
-                } else if (percentage >= 73.0) {
-                    gpa = 1.8;
-                } else if (percentage >= 72.0) {
-                    gpa = 1.7;
-                } else if (percentage >= 71.0) {
-                    gpa = 1.6;
-                } else if (percentage >= 70.0) {
-                    gpa = 1.5;
-                } else if (percentage >= 69.0) {
-                    gpa = 1.4;
-                } else if (percentage >= 68.0) {
-                    gpa = 1.3;
-                } else if (percentage >= 67.0) {
-                    gpa = 1.2;
-                } else if (percentage >= 66.0) {
-                    gpa = 1.1;
-                } else if (percentage >= 65.0) {
-                    gpa = 1.0;
-                } else {
-                    gpa = 0.0;
-                }
+                // Calculate GPA using a helper method
+                double gpa = calculateGPA(percentage);
 
                 // Display the calculated GPA.
                 System.out.println("Your GPA is: " + gpa);
@@ -153,72 +88,8 @@ public class Main {
             // Check if the input is of type Double
             if (percentageInput instanceof Double) {
                 double percentage = (double) percentageInput;
-                double gpa;
-                if (percentage >= 95.0) {
-                    gpa = 4.0;
-                } else if (percentage >= 94.0) {
-                    gpa = 3.9;
-                } else if (percentage >= 93.0) {
-                    gpa = 3.8;
-                } else if (percentage >= 92.0) {
-                    gpa = 3.7;
-                } else if (percentage >= 91.0) {
-                    gpa = 3.6;
-                } else if (percentage >= 90.0) {
-                    gpa = 3.5;
-                } else if (percentage >= 89.0) {
-                    gpa = 3.4;
-                } else if (percentage >= 88.0) {
-                    gpa = 3.3;
-                } else if (percentage >= 87.0) {
-                    gpa = 3.2;
-                } else if (percentage >= 86.0) {
-                    gpa = 3.1;
-                } else if (percentage >= 85.0) {
-                    gpa = 3.0;
-                } else if (percentage >= 84.0) {
-                    gpa = 2.9;
-                } else if (percentage >= 83.0) {
-                    gpa = 2.8;
-                } else if (percentage >= 82.0) {
-                    gpa = 2.7;
-                } else if (percentage >= 81.0) {
-                    gpa = 2.6;
-                } else if (percentage >= 80.0) {
-                    gpa = 2.5;
-                } else if (percentage >= 79.0) {
-                    gpa = 2.4;
-                } else if (percentage >= 78.0) {
-                    gpa = 2.3;
-                } else if (percentage >= 77.0) {
-                    gpa = 2.2;
-                } else if (percentage >= 76.0) {
-                    gpa = 2.1;
-                } else if (percentage >= 75.0) {
-                    gpa = 2.0;
-                } else if (percentage >= 74.0) {
-                    gpa = 1.9;
-                } else if (percentage >= 73.0) {
-                    gpa = 1.8;
-                } else if (percentage >= 72.0) {
-                    gpa = 1.7;
-                } else if (percentage >= 71.0) {
-                    gpa = 1.6;
-                } else if (percentage >= 70.0) {
-                    gpa = 1.5;
-                } else if (percentage >= 69.0) {
-                    gpa = 1.4;
-                } else if (percentage >= 68.0) {
-                    gpa = 1.3;
-                } else if (percentage >= 67.0) {
-                    gpa = 1.2;
-                } else if (percentage >= 66.0) {
-                    gpa = 1.1;
-                } else if (percentage >= 65.0) {
-                    gpa = 1.0;
-                } else {
-                    gpa = 0.0;
-                }
+                // Calculate GPA using the helper method
+                double gpa = calculateGPA(percentage);
                 System.out.println("Test Percentage " + percentage + ": GPA: " + gpa);
             } else {
                 System.out.println("Test Percentage " + percentageInput + ": Invalid input. Please enter a numeric percentage.");
@@ -226,5 +97,41 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Test Percentage " + percentageInput + ": Error during testing: " + e.getMessage());
         }
+    }
+
+    // Helper method to calculate GPA based on percentage
+    public static double calculateGPA(double percentage) {
+        if (percentage >= 95.0) return 4.0;
+        else if (percentage >= 94.0) return 3.9;
+        else if (percentage >= 93.0) return 3.8;
+        else if (percentage >= 92.0) return 3.7;
+        else if (percentage >= 91.0) return 3.6;
+        else if (percentage >= 90.0) return 3.5;
+        else if (percentage >= 89.0) return 3.4;
+        else if (percentage >= 88.0) return 3.3;
+        else if (percentage >= 87.0) return 3.2;
+        else if (percentage >= 86.0) return 3.1;
+        else if (percentage >= 85.0) return 3.0;
+        else if (percentage >= 84.0) return 2.9;
+        else if (percentage >= 83.0) return 2.8;
+        else if (percentage >= 82.0) return 2.7;
+        else if (percentage >= 81.0) return 2.6;
+        else if (percentage >= 80.0) return 2.5;
+        else if (percentage >= 79.0) return 2.4;
+        else if (percentage >= 78.0) return 2.3;
+        else if (percentage >= 77.0) return 2.2;
+        else if (percentage >= 76.0) return 2.1;
+        else if (percentage >= 75.0) return 2.0;
+        else if (percentage >= 74.0) return 1.9;
+        else if (percentage >= 73.0) return 1.8;
+        else if (percentage >= 72.0) return 1.7;
+        else if (percentage >= 71.0) return 1.6;
+        else if (percentage >= 70.0) return 1.5;
+        else if (percentage >= 69.0) return 1.4;
+        else if (percentage >= 68.0) return 1.3;
+        else if (percentage >= 67.0) return 1.2;
+        else if (percentage >= 66.0) return 1.1;
+        else if (percentage >= 65.0) return 1.0;
+        return 0.0;
     }
 }
